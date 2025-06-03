@@ -1,0 +1,92 @@
+parameters:
+# parameters for uplvsm model evaluation at resolution 518x518
+  model:
+    class_name: src.model.uplvsm.unposedLVSM
+
+    image_tokenizer: # we use dinov2 as the image tokenizer
+      image_size: 518
+      patch_size: 14
+      in_channels: 3  # 3 RGB
+
+    target_pose_tokenizer: # unused
+      image_size: 518
+      patch_size: 14
+      in_channels: 6  # 3 direction + 3 Reference
+
+    transformer:
+      d: 768
+      d_head: 64
+      encoder_n_layer: 6
+      estimator_n_layer: 4
+      decoder_n_layer: 14
+      special_init: true
+      depth_init: true
+      use_qk_norm: true
+      n_latent_vectors: 1024 # 4x16x16
+
+  unposed:
+    pose_enc_type: "absT_quaR"
+    dino_qknorm: true
+    
+  training:
+    amp_dtype: bf16
+    batch_size_per_gpu: 6
+    beta1: 0.9
+    beta2: 0.95
+    grad_clip_norm: 1.0
+    allowed_gradnorm_factor: 4
+    center_crop: true
+    scene_scale_factor: 1.35
+    checkpoint_dir: ./checkpoints/uplvsm/uplvsm_x518.pt
+    dataset_name: src.data.dataset_scene.Dataset
+    dataset_path: ./datasets/re10k-full_processed/test/full_list.txt
+    eval_dataset_path: ./datasets/re10k-full_processed/test/full_list.txt
+    grad_accum_steps: 1
+    grad_checkpoint_every: 1
+
+    l2_loss_weight: 1.0
+    lpips_loss_weight: 0.0
+    perceptual_loss_weight: 0.5
+
+    lr: 0.0004
+    train_steps: 100000
+
+
+    num_input_views: 2
+    num_target_views: 3
+    num_threads: 8
+    num_views: 5
+    num_workers: 4
+    prefetch_factor: 32
+
+
+    square_crop: true
+    target_has_input: false
+    use_amp: true
+    use_rel_pose: false
+    use_tf32: true
+    view_selector:
+      max_frame_dist: 192
+      min_frame_dist: 25
+
+
+    # *_every settings
+    print_every: 100
+    wandb_log_every: 100
+    eval_every: 4000
+    vis_every: 4000
+    checkpoint_every: 4000
+
+    wandb_exp_name: uplvsm_eval
+    wandb_project: lvsm
+    warmup: 4000
+    weight_decay: 0.05
+
+
+  # inference & evaluation settings
+  inference:
+    if_inference: True
+    compute_metrics: True
+    view_idx_file_path: ./assets/evaluation_index_re10k.json
+    render_images: True
+    inference_out_dir: ./logs/inference/uplvsm_x518

@@ -1,0 +1,28 @@
+
+
+*/__pycache__/
+/datasets/
+# !src/datasets/
+*.tar.gz
+*.log
+wandb/
+outputs/
+*.torch
+*.pth
+*.ckpt
+*.pt
+**/__pycache__/**
+artifacts/
+.iris_profiler/
+*.tar.gz
+*.torch
+logs/
+*.tar
+*.tar.gz
+*.zip
+aws/
+!datasets/split_and_preprocess.sh
+# *.json
+*.mat
+trash/
+checkpoints/

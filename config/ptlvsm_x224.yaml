@@ -1,0 +1,79 @@
+parameters:
+# parameters for ptlvsm training at 224x224 resolution
+  model:
+    class_name: src.model.ptlvsm.posedTargetLVSM
+
+    image_tokenizer: # we use dinov2 as the image tokenizer
+      image_size: 224
+      patch_size: 14
+      in_channels: 3  # 3 RGB
+
+    target_pose_tokenizer:
+      image_size: 224
+      patch_size: 14
+      in_channels: 6  # 3 direction + 3 Reference
+      
+    transformer:
+      d: 768
+      d_head: 64
+      n_layer: 24
+      special_init: true
+      depth_init: true
+      use_qk_norm: true
+
+  unposed:
+    # canonical_camera: true
+    dino_qknorm: true
+
+  training:
+    amp_dtype: bf16
+    batch_size_per_gpu: 16
+    beta1: 0.9
+    beta2: 0.95
+    grad_clip_norm: 1.0
+    allowed_gradnorm_factor: 4
+    center_crop: true
+    scene_scale_factor: 1.35
+    checkpoint_dir: ./checkpoints/ptlvsm
+    dataset_name: src.data.dataset_scene.Dataset
+    dataset_path: ./datasets/re10k-full_processed/train/full_list.txt
+    eval_dataset_path: ./datasets/re10k-full_processed/test/full_list.txt
+    grad_accum_steps: 1
+    grad_checkpoint_every: 1
+
+    l2_loss_weight: 1.0
+    lpips_loss_weight: 0.0
+    perceptual_loss_weight: 0.5
+
+    lr: 0.0004
+    train_steps: 100000
+
+
+    num_input_views: 2
+    num_target_views: 6
+    num_threads: 8
+    num_views: 8
+    num_workers: 4
+    prefetch_factor: 32
+
+
+    square_crop: true
+    target_has_input: true
+    use_amp: true
+    use_rel_pose: false
+    use_tf32: true
+    view_selector:
+      max_frame_dist: 192
+      min_frame_dist: 25
+
+    # *_every settings
+    print_every: 100
+    wandb_log_every: 100
+    eval_every: 4000
+    vis_every: 4000
+    checkpoint_every: 4000
+    
+    wandb_exp_name: ptlvsm
+    wandb_project: lvsm
+    warmup: 4000
+    weight_decay: 0.05
