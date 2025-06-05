@@ -1,5 +1,5 @@
 parameters:
-# parameters for uplvsm model upresolution training at 518x518
+# parameters for uplvsm model training at 518x518 resolution
   model:
     class_name: src.model.uplvsm.unposedLVSM
 

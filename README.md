@@ -11,7 +11,7 @@ Create and activate conda environment:
 ```bash
 conda create -n lvsm python=3.11
 conda activate lvsm
-pip install -r infra/requirements.txt
+pip install -r requirements.txt
 ```
 
 *Recommended*: GPU device with compute capability > 8.0. We used 8*A100 GPUs in our experiments.
@@ -59,7 +59,17 @@ torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdz
 torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdzv_endpoint localhost:29511 -m src.inference --config config/eval/uplvsm_x224.yaml
 ```
 
-> 📝 **TODO**: Release fine-tuned uplvsm model with 518×518 resolution.
+~~> 📝 **TODO**: Release fine-tuned uplvsm model with 518×518 resolution.~~
+
+✅ Download uplvsm model with 518×518 resolution from [Google Drive](https://drive.google.com/file/d/1DiLCEzHbxtusvA6ic6IhpYuhD93PUjJw/view?usp=sharing), and run evaluation:
+
+```bash
+# fast inference, compute metrics only
+torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdzv_endpoint localhost:29511 -m src.inference_fast --config config/eval/uplvsm_x518.yaml
+
+# complete inference
+torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdzv_endpoint localhost:29511 -m src.inference --config config/eval/uplvsm_x518.yaml
+```
 
 ## 3. Training
 
