@@ -91,7 +91,7 @@ Our implementation builds upon [LVSM](https://github.com/haian-jin/LVSM). We als
 If you find this work useful for your research, please consider citing:
 
 ```bibtex
-@misc{wang2025dependlearnsynthesizingnovel,
+@misc{wang2025less3depend,
     title={The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge}, 
     author={Haoru Wang and Kai Ye and Yangyan Li and Wenzheng Chen and Baoquan Chen},
     year={2025},
