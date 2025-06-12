@@ -2,6 +2,11 @@
 
 This repository contains the PyTorch implementation of the paper **"The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge"**.
 
+<div>
+    <a href="https://pku-vcl-geometry.github.io/Less3Depend/"><strong>Project Page</strong></a> |
+    <a href="https://arxiv.org/abs/2506.09885"><strong>Paper</strong></a> 
+</div>
+
 ## 1. Preparation
 
 ### Environment Setup
@@ -59,8 +64,6 @@ torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdz
 torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdzv_endpoint localhost:29511 -m src.inference --config config/eval/uplvsm_x224.yaml
 ```
 
-~~> 📝 **TODO**: Release fine-tuned uplvsm model with 518×518 resolution.~~
-
 ✅ Download uplvsm model with 518×518 resolution from [Google Drive](https://drive.google.com/file/d/1DiLCEzHbxtusvA6ic6IhpYuhD93PUjJw/view?usp=sharing), and run evaluation:
 
 ```bash
@@ -88,10 +91,13 @@ Our implementation builds upon [LVSM](https://github.com/haian-jin/LVSM). We als
 If you find this work useful for your research, please consider citing:
 
 ```bibtex
-@article{your_paper_2024,
-  title={The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge},
-  author={Your Authors},
-  journal={Your Journal/Conference},
-  year={2024}
+@misc{wang2025dependlearnsynthesizingnovel,
+    title={The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge}, 
+    author={Haoru Wang and Kai Ye and Yangyan Li and Wenzheng Chen and Baoquan Chen},
+    year={2025},
+    eprint={2506.09885},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2506.09885}, 
 }
 ```
