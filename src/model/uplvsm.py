@@ -136,9 +136,9 @@ class unposedLVSM(nn.Module):
             for idx, block in enumerate(self.transformer_decoder):
                 if config.get("depth_init", False):
                     weight_init_std = 0.02 / (2 * (idx + 1)) ** 0.5
-            else:
-                weight_init_std = 0.02 / (2 * config.decoder_n_layer) ** 0.5
-            block.apply(lambda module: init_weights(module, weight_init_std))  
+                else:
+                    weight_init_std = 0.02 / (2 * config.decoder_n_layer) ** 0.5
+                block.apply(lambda module: init_weights(module, weight_init_std))  
         else:
             # Encoder
             for block in self.transformer_encoder:
