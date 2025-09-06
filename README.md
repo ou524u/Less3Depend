@@ -45,7 +45,7 @@ python process_data.py --base_path datasets/re10k --output_dir datasets/re10k-fu
 ```
 
 ## 2. Evaluation
-
+<!--
 Download pre-trained model from [Google Drive](https://drive.google.com/file/d/1PMEl0RoOwi2wlsMRv6K9YSfeq-KqVYbz/view?usp=sharing), or with the following command:
 
 ```bash
@@ -53,6 +53,8 @@ Download pre-trained model from [Google Drive](https://drive.google.com/file/d/1
 mkdir -p checkpoints/uplvsm
 gdown 1PMEl0RoOwi2wlsMRv6K9YSfeq-KqVYbz -O checkpoints/uplvsm/uplvsm_x224.pt
 ```
+-->
+Download pre-trained model from [Hugging Face](https://huggingface.co/littlekoyo/Less3Depend/blob/main/uplvsm_x224.pt).
 
 Run evaluation:
 
@@ -64,8 +66,12 @@ torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdz
 torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdzv_endpoint localhost:29511 -m src.inference --config config/eval/uplvsm_x224.yaml
 ```
 
-✅ Download uplvsm model with 518×518 resolution from [Google Drive](https://drive.google.com/file/d/1DiLCEzHbxtusvA6ic6IhpYuhD93PUjJw/view?usp=sharing), and run evaluation:
-
+<!--
+✅ Download uplvsm model with 518×518 resolution from [Google Drive](https://drive.google.com/file/d/1DiLCEzHbxtusvA6ic6IhpYuhD93PUjJw/view?usp=sharing), and run
+evaluation:
+-->
+✅ Download uplvsm model with 518×518 resolution from [Hugging Face](https://huggingface.co/littlekoyo/Less3Depend/blob/main/uplvsm_x518.pt), and run
+evaluation:
 ```bash
 # fast inference, compute metrics only
 torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdzv_endpoint localhost:29511 -m src.inference_fast --config config/eval/uplvsm_x518.yaml
