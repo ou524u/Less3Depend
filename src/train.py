@@ -61,7 +61,7 @@ dataloader_iter = iter(dataloader)
 # eval dataset
 eval_dataset = Dataset(config, mode='eval')
 # print(f"evaluation dataset length {len(eval_dataset)}")
-datasampler = DistributedSampler(eval_dataset)
+eval_datasampler = DistributedSampler(eval_dataset)
 eval_dataloader = DataLoader(
     eval_dataset,
     batch_size=config.training.batch_size_per_gpu,
@@ -71,7 +71,7 @@ eval_dataloader = DataLoader(
     pin_memory=False,
     drop_last=True,
     prefetch_factor=config.training.prefetch_factor,
-    sampler=datasampler,
+    sampler=eval_datasampler,
 )
 eval_dataloader_iter = iter(eval_dataloader)
 
