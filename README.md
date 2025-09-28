@@ -7,8 +7,6 @@ This repository contains the PyTorch implementation of the paper **"The Less You
     <a href="https://arxiv.org/abs/2506.09885"><strong>Paper</strong></a> 
 </div>
 
----
-> 🎆Update: We're happy to add  dl3dv support on the same codebase. Please refer to [Open-Rayzer](https://github.com/ou524u/Open-Rayzer) if you're interested. Please ensure compliance with the respective licensing agreements of the original work when downloading.
 
 
 
