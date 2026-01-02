@@ -95,7 +95,7 @@ torchrun --nproc_per_node 8 --nnodes 1 --rdzv_id 18640 --rdzv_backend c10d --rdz
 
 ## 📄 Acknowledgments
 
-Our implementation builds upon [LVSM](https://github.com/haian-jin/LVSM). We also recommend [RayZer](https://github.com/hwjiang1510/RayZer) for self-supervised scene reconstruction.
+Our implementation builds upon [LVSM](https://github.com/haian-jin/LVSM). We also recommend [RayZer](https://github.com/hwjiang1510/RayZer), [Pensieve](https://github.com/Dwawayu/Pensieve) and [X-Factor](https://github.com/vsitzmann/xfactor-nvs) for self-supervised scene reconstruction.
 
 If you find this work useful for your research, please consider citing:
 
