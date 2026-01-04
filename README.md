@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ### Dataset Setup
 
-> Update(26/01/04): We now provide also our preprocessed DL3DV dataset on [huggingface](https://huggingface.co/datasets/littlekoyo/dl3dv_chunked/tree/main)!
+> Update(26/01/04): We now also provide our preprocessed version of DL3DV dataset in pixelSplat-style format on [huggingface](https://huggingface.co/datasets/littlekoyo/dl3dv_chunked/tree/main)!
 
 We use RealEstate10K dataset from [pixelSplat](https://github.com/dcharatan/pixelsplat?tab=readme-ov-file#acquiring-datasets), and followed [LVSM](https://github.com/haian-jin/LVSM) to do the preprocessing.
 
