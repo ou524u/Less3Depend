@@ -9,7 +9,6 @@ This repository contains the PyTorch implementation of the paper **"The Less You
 
 
 
-
 ## 1. Preparation
 
 ### Environment Setup
@@ -25,6 +24,8 @@ pip install -r requirements.txt
 *Recommended*: GPU device with compute capability > 8.0. We used 8*A100 GPUs in our experiments.
 
 ### Dataset Setup
+
+> Update(26/01/04): We now provide also our preprocessed DL3DV dataset on [huggingface](https://huggingface.co/datasets/littlekoyo/dl3dv_chunked/tree/main)!
 
 We use RealEstate10K dataset from [pixelSplat](https://github.com/dcharatan/pixelsplat?tab=readme-ov-file#acquiring-datasets), and followed [LVSM](https://github.com/haian-jin/LVSM) to do the preprocessing.
 
