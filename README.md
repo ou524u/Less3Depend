@@ -1,4 +1,4 @@
-# Less3Depend
+# Less3Depend (ICLR 2026)
 
 > Update(26/01/27): Less3Depend has been accepted to ICLR 2026!🎉
 >
