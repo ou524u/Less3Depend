@@ -1,15 +1,11 @@
 # Less3Depend (ICLR 2026)
 
-> Update(26/01/27): Less3Depend has been accepted to ICLR 2026!🎉
->
-
 This repository contains the PyTorch implementation of the paper **"The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge"**.
 
 <div>
     <a href="https://pku-vcl-geometry.github.io/Less3Depend/"><strong>Project Page</strong></a> |
     <a href="https://arxiv.org/abs/2506.09885"><strong>Paper</strong></a> 
 </div>
-
 
 ## 1. Preparation
 
