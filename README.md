@@ -1,6 +1,6 @@
 # Less3Depend (ICLR 2026)
 
-This repository contains the PyTorch implementation of the paper **"The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge"**.
+This repository contains the PyTorch implementation of the paper **"The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images with Minimal 3D Knowledge"**.
 
 <div>
     <a href="https://pku-vcl-geometry.github.io/Less3Depend/"><strong>Project Page</strong></a> |
@@ -99,13 +99,11 @@ Our implementation builds upon [LVSM](https://github.com/haian-jin/LVSM). We als
 If you find this work useful for your research, please consider citing:
 
 ```bibtex
-@misc{wang2025less3depend,
-    title={The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge}, 
-    author={Haoru Wang and Kai Ye and Yangyan Li and Wenzheng Chen and Baoquan Chen},
-    year={2025},
-    eprint={2506.09885},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV},
-    url={https://arxiv.org/abs/2506.09885}, 
+@inproceedings{wang2026less3depend,
+    title={The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images with Minimal 3D Knowledge},
+    author={Haoru Wang and Kai Ye and Minghan Qin and Yangyan Li and Wenzheng Chen and Baoquan Chen},
+    booktitle={International Conference on Learning Representations (ICLR)},
+    year={2026},
+    url={https://openreview.net/forum?id=QXc2NBJFHr}
 }
 ```
